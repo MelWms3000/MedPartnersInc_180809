@@ -3626,6 +3626,8 @@ body {
   }
 }
 .cid-r0g63yvio9 {
+  padding-top: 30px;
+  padding-bottom: 45px;
   background: #ffffff;
 }
 .cid-r0g63yvio9 .container-fluid {
@@ -3634,7 +3636,6 @@ body {
 .cid-r0g63yvio9 .image-block {
   position: relative;
   margin: auto;
-  width: 100% !important;
 }
 .cid-r0g63yvio9 .image-block img {
   width: 100%;
