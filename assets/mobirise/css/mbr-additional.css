@@ -3605,7 +3605,7 @@ body {
   }
 }
 .cid-r0g20ajJ0Z {
-  padding-top: 90px;
+  padding-top: 120px;
   padding-bottom: 90px;
   background-color: #ffffff;
 }
@@ -3618,84 +3618,16 @@ body {
 .cid-r0g20ajJ0Z .mbr-section-title {
   display: inline-block;
   position: relative;
+  color: #a710a9;
 }
 @media (max-width: 767px) {
   .cid-r0g20ajJ0Z .container-fluid {
     padding: 0 1rem;
   }
 }
-.cid-r0g1xxCuRK {
-  overflow-x: hidden !important;
-}
-.cid-r0g1xxCuRK .container-fluid {
-  padding: 0 3rem;
-}
-.cid-r0g1xxCuRK .scroll-wrapper {
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-position: 100% 0;
-  background-size: cover;
-  position: absolute;
-  background-repeat: repeat;
-  z-index: 0;
-  background-image: url("../../../assets/images/govemp-552x200.png");
-  -webkit-animation: scroll-wrapper linear infinite;
-  -moz-animation: scroll-wrapper linear infinite;
-  -o-animation: scroll-wrapper linear infinite;
-  animation: scroll-wrapper linear infinite;
-  transform: translateZ(0);
-}
-.cid-r0g1xxCuRK .scroll-wrapper.second {
-  left: calc(100% - 1px);
-  background-position: 0 0;
-}
-.cid-r0g1xxCuRK .mbr-overlay {
-  z-index: 1;
-}
-.cid-r0g1xxCuRK .block-content {
-  z-index: 2;
-}
-@keyframes scroll-wrapper {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@-webkit-keyframes scroll-wrapper {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@-moz-keyframes scroll-wrapper {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@-o-keyframes scroll-wrapper {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@media (max-width: 767px) {
-  .cid-r0g1xxCuRK .container-fluid {
-    padding: 0 1rem;
-  }
-}
 .cid-qW5TACKhaT {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 120px;
+  padding-bottom: 120px;
   background-image: url("../../../assets/images/logo-910x470.png");
 }
 .cid-qW5TACKhaT [class^="socicon-"]:before,

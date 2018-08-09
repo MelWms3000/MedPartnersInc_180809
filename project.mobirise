@@ -38,7 +38,7 @@
     "path": "@PROJECT_PATH@",
     "siteFonts": [],
     "versionFirst": "4.7.7",
-    "uniqCompNum": 113,
+    "uniqCompNum": 114,
     "versionPublish": "4.8.1",
     "screenshot": "screenshot.png"
   },
@@ -3087,7 +3087,8 @@
             },
             ".mbr-section-title": {
               "display": "inline-block",
-              "position": "relative"
+              "position": "relative",
+              "color": "#a710a9"
             },
             "@media (max-width: 767px)": {
               ".container-fluid": {
@@ -3096,7 +3097,7 @@
             }
           },
           "_name": "content7",
-          "_customHTML": "<section group=\"Content\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!--Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Secondary Title\" name=\"showSubtitle\" checked>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/img/04.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=kI1YE_qenSU\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#efefef\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container-fluid\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-lg-6 col-md-8 align-center\" mbr-if=\"showTitle || showSubtitle\">\n                <h3 mbr-if=\"showSubtitle\" class=\"mbr-section-subtitle align-center mbr-fonts-style mbr-light pb-3\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-subtitle\">\n                    Secondary Title\n                </h3>\n                <h2 mbr-if=\"showTitle\" class=\"mbr-section-title align-center mbr-fonts-style mbr-bold\" mbr-theme-style=\"display-2\" data-app-selector=\".mbr-section-title\"></h2>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section group=\"Content\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!--Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"8\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Secondary Title\" name=\"showSubtitle\" checked>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/img/04.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=kI1YE_qenSU\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#efefef\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container-fluid\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-lg-6 col-md-8 align-center\" mbr-if=\"showTitle || showSubtitle\">\n                <h3 mbr-if=\"showSubtitle\" class=\"mbr-section-subtitle align-center mbr-fonts-style mbr-light pb-3\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-subtitle\">\n                    Secondary Title\n                </h3>\n                <h2 mbr-if=\"showTitle\" class=\"mbr-section-title align-center mbr-fonts-style mbr-bold\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-title\">Are you an injured federal employee?</h2>\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "r0g20ajJ0Z",
           "_protectedParams": [],
           "_global": false,
@@ -3105,98 +3106,47 @@
           "_anchor": "content7-34"
         },
         {
-          "_styles": {
-            ".container-fluid": {
-              "padding": "0 3rem"
-            },
-            "overflow-x": "hidden !important",
-            ".scroll-wrapper": {
-              "top": "0",
-              "width": "100%",
-              "height": "100%",
-              "background-position": "100% 0",
-              "background-size": "cover",
-              "position": "absolute",
-              "background-repeat": "repeat",
-              "z-index": "0",
-              "& when not (@fullScreen)": {
-                "padding-top": "(@paddingTop * 15px)",
-                "padding-bottom": "(@paddingBottom * 15px)"
-              },
-              "& when (@bg-type = 'color')": {
-                "background-color": "@bg-value"
-              },
-              "& when (@bg-type = 'image')": {
-                "background-image": "url(@bg-value)",
-                "& when (@scrollBg)": {
-                  "-webkit-animation": "scroll-wrapper linear infinite",
-                  "-moz-animation": "scroll-wrapper linear infinite",
-                  "-o-animation": "scroll-wrapper linear infinite",
-                  "animation": "scroll-wrapper linear infinite",
-                  "transform": "translateZ(0)"
-                }
-              },
-              "&.second": {
-                "left": "~\"calc(100% - 1px)\"",
-                "background-position": "0 0"
+          "_params": {
+            "autoplay": true,
+            "animType": "kenburns",
+            "theme": "absent",
+            "slides": [
+              {
+                "image": "@PROJECT_PATH@/assets/images/govemp-1600x1080.jpg",
+                "linkUrl": "http://google.com",
+                "link": false,
+                "src": "@PROJECT_PATH@/assets/images/govemp-552x200.png",
+                "tooltip": "@PROJECT_PATH@/assets/images/govemp-85x48.png",
+                "title": "title 3",
+                "text": "text 3",
+                "active": true
               }
-            },
-            ".mbr-overlay": {
-              "z-index": "1"
-            },
-            ".block-content": {
-              "z-index": "2",
-              "& when not (@fullScreen)": {
-                "padding-top": "(@paddingTop * 15px)",
-                "padding-bottom": "(@paddingBottom * 15px)"
-              }
-            },
-            "@keyframes scroll-wrapper": {
-              "0%": {
-                "transform": "translateX(0)"
-              },
-              "100%": {
-                "transform": "translateX(-100%)"
-              }
-            },
-            "@-webkit-keyframes scroll-wrapper": {
-              "0%": {
-                "transform": "translateX(0)"
-              },
-              "100%": {
-                "transform": "translateX(-100%)"
-              }
-            },
-            "@-moz-keyframes scroll-wrapper": {
-              "0%": {
-                "transform": "translateX(0)"
-              },
-              "100%": {
-                "transform": "translateX(-100%)"
-              }
-            },
-            "@-o-keyframes scroll-wrapper": {
-              "0%": {
-                "transform": "translateX(0)"
-              },
-              "100%": {
-                "transform": "translateX(-100%)"
-              }
-            },
-            "@media (max-width: 767px)": {
-              ".container-fluid": {
-                "padding": "0 1rem"
-              }
-            }
+            ],
+            "fullScreen": true,
+            "showCaptions": false,
+            "hideControls": false,
+            "responsive": "2",
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "captionsEffect": "slide",
+            "showBullets": false,
+            "bgColor": "#ffffff",
+            "timeout": "5",
+            "duration": "5",
+            "customSize": false,
+            "customWidth": "1600",
+            "customHeight": "1080",
+            "size": "1600x1080",
+            "width": "1600",
+            "height": "1080"
           },
-          "_name": "header5",
-          "_customHTML": "<section group=\"Headers header5\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n<!-- ,\n         'scroll-background': scrollBackground -->\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" condition=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Scroll Bg\" name=\"scrollBg\" checked>\n        <input type=\"range\" title=\"Scroll Time\" name=\"scrollTime\" min=\"1\" max=\"60\" step=\"1\" value=\"59\" condition=\"scrollBg && bg.type == 'image'\" inline>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/govemp-552x200.png\" selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#dddddd\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"scroll-wrapper\" mbr-style=\"{'animation-duration':scrollTime+'s'}\"></div>\n    <div class=\"scroll-wrapper second\" mbr-if=\"scrollBg\" mbr-style=\"{'animation-duration':scrollTime+'s'}\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\">\n    </div>\n    <div class=\"container-fluid text-center block-content\" data-stellar-background-ratio=\".5\">\n      <div class=\"row justify-content-center slider-wrapper\" mbr-if=\"showTitle || showSubtitle\">\n        <div class=\"col-md-10\">\n              <h2 mbr-if=\"showTitle\" class=\"mbr-section-title mbr-fonts-style align-left mbr-black\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\">\n                  Header with background horizontal scroll\n              </h2>\n              <h4 class=\"mbr-section-subtitle mbr-fonts-style align-left mbr-black pt-3\" mbr-if=\"showSubtitle\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-subtitle,.mbr-section-btn\">\n                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus delectus, voluptate consectetur sunt ad ex officiis, sequi reprehenderit repudiandae doloremque asperiores non aperiam nemo.\n              </h4>\n              <div class=\"mbr-section-btn align-left pt-3\" mbr-buttons mbr-theme-style=\"display-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n                  <a class=\"btn btn-md btn-success\" href=\"https://mobirise.com\">LEARN MORE</a>\n              </div>\n        </div>\n      </div>\n    </div>\n    <div mbr-if=\"showArrow && fullScreen\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
-          "_cid": "r0g1xxCuRK",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {},
-          "_anchor": "header5-33"
+          "articleLayout": false,
+          "alias": "wowslider",
+          "_tags": [
+            "Extension"
+          ],
+          "_name": "wowslider",
+          "_anchor": "wowslider-35"
         },
         {
           "_styles": {
@@ -3249,7 +3199,7 @@
             }
           },
           "_name": "social-buttons1",
-          "_customHTML": "<section group=\"Social\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" plugins=\"SocialLikes\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input inline type=\"range\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input inline type=\"range\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Underline\" name=\"showUnderline\" checked condition=\"showTitle\">\n        <input type=\"color\" title=\"Icons Color\" name=\"iconsColor\" value=\"#680252\">\n        <input type=\"color\" title=\"Icons Bg Color\" name=\"iconsBg\" value=\"#a710a9\">\n\n        <header>It will share the current page</header>\n        <input type=\"checkbox\" title=\"Facebook\" name=\"facebook\" checked>\n        <input type=\"checkbox\" title=\"Twitter\" name=\"twitter\" checked>\n        <input type=\"checkbox\" title=\"Google+\" name=\"google\" checked>\n        <input type=\"checkbox\" title=\"Vkontakte\" name=\"vkontakte\">\n        <input type=\"checkbox\" title=\"Odnoklassniki\" name=\"odnoklassniki\">\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/logo-910x470.png\" parallax selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=kI1YE_qenSU\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#efefef\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"col-md-8 align-center\">\n                <h2 class=\"mbr-section-title mbr-fonts-style mb-0\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".btn-social, .mbr-section-title, .underline\">\n                    SHARE THIS PAGE!\n                </h2>\n                <div class=\"underline align-center\" mbr-if=\"showUnderline && showTitle\">\n                     <div class=\"line\"></div>\n                </div>\n                <div class=\"mbr-social-likes pt-4\" data-counters=\"false\">\n                    <span mbr-if=\"facebook\" class=\"btn btn-social facebook\" title=\"Share link on Facebook\">\n                        <i class=\"socicon socicon-facebook\"></i>\n                    </span>\n                    <span mbr-if=\"twitter\" class=\"btn btn-social twitter\" title=\"Share link on Twitter\">\n                        <i class=\"socicon socicon-twitter\"></i>\n                    </span>\n                    <span mbr-if=\"google\" class=\"btn btn-social plusone\" title=\"Share link on Google+\">\n                        <i class=\"socicon socicon-googleplus\"></i>\n                    </span>\n                    <span mbr-if=\"vkontakte\" class=\"btn btn-social vkontakte\" title=\"Share link on VKontakte\">\n                        <i class=\"socicon socicon-vkontakte\"></i>\n                    </span>\n                    <span mbr-if=\"odnoklassniki\" class=\"btn btn-social odnoklassniki\" title=\"Share link on Odnoklassniki\">\n                        <i class=\"socicon socicon-odnoklassniki\"></i>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section group=\"Social\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" plugins=\"SocialLikes\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input inline type=\"range\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"8\">\n        <input inline type=\"range\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"8\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Underline\" name=\"showUnderline\" checked condition=\"showTitle\">\n        <input type=\"color\" title=\"Icons Color\" name=\"iconsColor\" value=\"#680252\">\n        <input type=\"color\" title=\"Icons Bg Color\" name=\"iconsBg\" value=\"#a710a9\">\n\n        <header>It will share the current page</header>\n        <input type=\"checkbox\" title=\"Facebook\" name=\"facebook\" checked>\n        <input type=\"checkbox\" title=\"Twitter\" name=\"twitter\" checked>\n        <input type=\"checkbox\" title=\"Google+\" name=\"google\" checked>\n        <input type=\"checkbox\" title=\"Vkontakte\" name=\"vkontakte\">\n        <input type=\"checkbox\" title=\"Odnoklassniki\" name=\"odnoklassniki\">\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/logo-910x470.png\" parallax selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=kI1YE_qenSU\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#efefef\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"col-md-8 align-center\">\n                <h2 class=\"mbr-section-title mbr-fonts-style mb-0\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".btn-social, .mbr-section-title, .underline\">\n                    SHARE THIS PAGE!\n                </h2>\n                <div class=\"underline align-center\" mbr-if=\"showUnderline && showTitle\">\n                     <div class=\"line\"></div>\n                </div>\n                <div class=\"mbr-social-likes pt-4\" data-counters=\"false\">\n                    <span mbr-if=\"facebook\" class=\"btn btn-social facebook\" title=\"Share link on Facebook\">\n                        <i class=\"socicon socicon-facebook\"></i>\n                    </span>\n                    <span mbr-if=\"twitter\" class=\"btn btn-social twitter\" title=\"Share link on Twitter\">\n                        <i class=\"socicon socicon-twitter\"></i>\n                    </span>\n                    <span mbr-if=\"google\" class=\"btn btn-social plusone\" title=\"Share link on Google+\">\n                        <i class=\"socicon socicon-googleplus\"></i>\n                    </span>\n                    <span mbr-if=\"vkontakte\" class=\"btn btn-social vkontakte\" title=\"Share link on VKontakte\">\n                        <i class=\"socicon socicon-vkontakte\"></i>\n                    </span>\n                    <span mbr-if=\"odnoklassniki\" class=\"btn btn-social odnoklassniki\" title=\"Share link on Odnoklassniki\">\n                        <i class=\"socicon socicon-odnoklassniki\"></i>\n                    </span>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "qW5TACKhaT",
           "_anchor": "social-buttons1-q",
           "_protectedParams": [],
