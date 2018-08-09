@@ -38,7 +38,7 @@
     "path": "@PROJECT_PATH@",
     "siteFonts": [],
     "versionFirst": "4.7.7",
-    "uniqCompNum": 111,
+    "uniqCompNum": 113,
     "versionPublish": "4.8.1",
     "screenshot": "screenshot.png"
   },
@@ -3071,6 +3071,41 @@
         },
         {
           "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".container-fluid": {
+              "padding": "0 3rem"
+            },
+            ".media-container-column": {
+              "padding": "0 2rem"
+            },
+            ".mbr-section-title": {
+              "display": "inline-block",
+              "position": "relative"
+            },
+            "@media (max-width: 767px)": {
+              ".container-fluid": {
+                "padding": "0 1rem"
+              }
+            }
+          },
+          "_name": "content7",
+          "_customHTML": "<section group=\"Content\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!--Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Secondary Title\" name=\"showSubtitle\" checked>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/img/04.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=kI1YE_qenSU\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#efefef\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container-fluid\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-lg-6 col-md-8 align-center\" mbr-if=\"showTitle || showSubtitle\">\n                <h3 mbr-if=\"showSubtitle\" class=\"mbr-section-subtitle align-center mbr-fonts-style mbr-light pb-3\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-subtitle\">\n                    Secondary Title\n                </h3>\n                <h2 mbr-if=\"showTitle\" class=\"mbr-section-title align-center mbr-fonts-style mbr-bold\" mbr-theme-style=\"display-2\" data-app-selector=\".mbr-section-title\"></h2>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "r0g20ajJ0Z",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "content7-34"
+        },
+        {
+          "_styles": {
             ".container-fluid": {
               "padding": "0 3rem"
             },
@@ -3152,22 +3187,16 @@
               ".container-fluid": {
                 "padding": "0 1rem"
               }
-            },
-            ".mbr-section-title B": {
-              "color": "#680252"
-            },
-            ".mbr-section-subtitle,.mbr-section-btn B": {
-              "color": "#680252"
             }
           },
           "_name": "header5",
-          "_customHTML": "<section group=\"Headers header5\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n<!-- ,\n         'scroll-background': scrollBackground -->\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" condition=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"7\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Scroll Bg\" name=\"scrollBg\" checked>\n        <input type=\"range\" title=\"Scroll Time\" name=\"scrollTime\" min=\"1\" max=\"60\" step=\"1\" value=\"43\" condition=\"scrollBg && bg.type == 'image'\" inline>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/govemp-552x200.png\" selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#dddddd\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"scroll-wrapper\" mbr-style=\"{'animation-duration':scrollTime+'s'}\"></div>\n    <div class=\"scroll-wrapper second\" mbr-if=\"scrollBg\" mbr-style=\"{'animation-duration':scrollTime+'s'}\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\">\n    </div>\n    <div class=\"container-fluid text-center block-content\" data-stellar-background-ratio=\".5\">\n      <div class=\"row justify-content-center slider-wrapper\" mbr-if=\"showTitle || showSubtitle\">\n        <div class=\"col-md-10\">\n              <h2 mbr-if=\"showTitle\" class=\"mbr-section-title mbr-fonts-style align-left mbr-black\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\"><b>\n                  Who We Serve</b></h2>\n              <h4 class=\"mbr-section-subtitle mbr-fonts-style align-left mbr-black pt-3\" mbr-if=\"showSubtitle\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-subtitle,.mbr-section-btn\"><b>\n                  We serve all injured federal employees.</b></h4>\n              <div class=\"mbr-section-btn align-left pt-3\" mbr-buttons mbr-theme-style=\"display-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n                  <a class=\"btn btn-md btn-success\" href=\"https://mobirise.com\">LEARN MORE</a>\n              </div>\n        </div>\n      </div>\n    </div>\n    <div mbr-if=\"showArrow && fullScreen\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
-          "_cid": "qW5Qn0WHdm",
-          "_anchor": "header5-n",
+          "_customHTML": "<section group=\"Headers header5\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen}\">\n<!-- ,\n         'scroll-background': scrollBackground -->\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" condition=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"10\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Scroll Bg\" name=\"scrollBg\" checked>\n        <input type=\"range\" title=\"Scroll Time\" name=\"scrollTime\" min=\"1\" max=\"60\" step=\"1\" value=\"59\" condition=\"scrollBg && bg.type == 'image'\" inline>\n        <fieldset type=\"background\" name=\"bg\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/govemp-552x200.png\" selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#dddddd\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    <div class=\"scroll-wrapper\" mbr-style=\"{'animation-duration':scrollTime+'s'}\"></div>\n    <div class=\"scroll-wrapper second\" mbr-if=\"scrollBg\" mbr-style=\"{'animation-duration':scrollTime+'s'}\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\">\n    </div>\n    <div class=\"container-fluid text-center block-content\" data-stellar-background-ratio=\".5\">\n      <div class=\"row justify-content-center slider-wrapper\" mbr-if=\"showTitle || showSubtitle\">\n        <div class=\"col-md-10\">\n              <h2 mbr-if=\"showTitle\" class=\"mbr-section-title mbr-fonts-style align-left mbr-black\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\">\n                  Header with background horizontal scroll\n              </h2>\n              <h4 class=\"mbr-section-subtitle mbr-fonts-style align-left mbr-black pt-3\" mbr-if=\"showSubtitle\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-subtitle,.mbr-section-btn\">\n                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus delectus, voluptate consectetur sunt ad ex officiis, sequi reprehenderit repudiandae doloremque asperiores non aperiam nemo.\n              </h4>\n              <div class=\"mbr-section-btn align-left pt-3\" mbr-buttons mbr-theme-style=\"display-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n                  <a class=\"btn btn-md btn-success\" href=\"https://mobirise.com\">LEARN MORE</a>\n              </div>\n        </div>\n      </div>\n    </div>\n    <div mbr-if=\"showArrow && fullScreen\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
+          "_cid": "r0g1xxCuRK",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {}
+          "_params": {},
+          "_anchor": "header5-33"
         },
         {
           "_styles": {
